@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('etudiants', 'EtudiantsController@index');
+Route::get('etudiants/{etu}', 'EtudiantsController@show');
+
+Route::post('ajoutEtudiant', 'EtudiantsController@store');
+/*Route::post('etudiants', function() {
+    return  response()->json([
+            'message' => 'Create success'
+        ], 201);
+});*/
