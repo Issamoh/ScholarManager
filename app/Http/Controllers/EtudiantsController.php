@@ -22,6 +22,7 @@ class EtudiantsController extends Controller
     {
     
        $etudiant = Etudiant::create($request->all());
+
        return response()->json($etudiant, 201);	
     }
  /*

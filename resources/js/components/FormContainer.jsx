@@ -73,8 +73,8 @@ class FormContainer extends Component {
     handleFormSubmit(e) {
         e.preventDefault();
         let userData = this.state.newUser;
-
-        fetch("api/etudiants/", {
+        
+        fetch("api/ajoutEtudiant", {
             method: "POST",
             body: JSON.stringify(userData),
             headers: {
