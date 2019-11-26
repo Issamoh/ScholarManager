@@ -22,6 +22,8 @@ class EtudiantsTableSeeder extends Seeder
             $etudiant->prenom = $faker->firstName;
             $etudiant->dateNaissance = $faker->dateTimeThisCentury->format('Y-m-d');
             $etudiant->lieuNaissance = $faker->name;
+            $etudiant->gender = $faker->name;
+            $etudiant->moyenneBac = $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 20);
             $etudiant->email = $faker->unique()->email;
             $etudiant->tel = $faker->phoneNumber;
             $etudiant->save();

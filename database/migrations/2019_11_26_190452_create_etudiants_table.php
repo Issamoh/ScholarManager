@@ -22,6 +22,8 @@ class CreateEtudiantsTable extends Migration
             $table->string('prenom');
             $table->date('dateNaissance');
             $table->string('lieuNaissance');
+            $table->string('gender');
+            $table->float('moyenneBac');
             $table->string('email')->unique();
             $table->string('tel');
             $table->integer('groupe');
