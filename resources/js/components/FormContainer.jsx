@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Input from "./Input";
 import Select from "./Select";
 import Button from "react-bootstrap/Button";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
 class FormContainer extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class FormContainer extends Component {
                 bacDegree: ""
             },
 
-            genderOptions: ["Male", "Female", "Others"]
+            genderOptions: ["Mâle", "Femelle"]
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleClearForm = this.handleClearForm.bind(this);
@@ -119,7 +120,7 @@ class FormContainer extends Component {
                     title={" Age "}
                     name={"age"}
                     value={this.state.newUser.age}
-                    placeholder={"Entrer l age "}
+                    placeholder={"Entrer l âge "}
                     handleChange={this.handleInput}
                 />{" "}
                 {/* Input for Age */}
@@ -133,7 +134,7 @@ class FormContainer extends Component {
                 />{" "}
                 {/* email */}
                 <Input
-                    type={"number"}
+                    type={"tel"}
                     title={"Téléphone"}
                     name={"phone"}
                     value={this.state.newUser.phone}
@@ -151,34 +152,41 @@ class FormContainer extends Component {
                 />{" "}
                 {/* bacDegree */}
                 <Select
-                    title={"Gender"}
+                    title={"Sexe"}
                     name={"gender"}
                     options={this.state.genderOptions}
                     value={this.state.newUser.gender}
-                    placeholder={"Select Gender"}
+                    placeholder={"choisir le sexe"}
                     handleChange={this.handleInput}
                 />{" "}
                 {/* Gender Selection */}
-                <Button
-                    type="submit"
-                    variant="outline-primary"
-                    onClick={this.handleFormSubmit}
+                <ButtonToolbar
+                    className="justify-content-between"
+                    aria-label="Toolbar with Button groups"
+                >
+                    <Button
+                        type="submit"
+                        variant="outline-primary"
+                        size="lg"
+                        onClick={this.handleFormSubmit}
 
-                    // style={buttonStyle}
-                >
-                    Valider
-                </Button>{" "}
-                {/*Submit */}
-                <Button
-                    variant="outline-primary"
-                    //  action={this.handleClearForm}
-                    onClick={this.handleClearForm}
-                    /*  type={"secondary"}
+                        // style={buttonStyle}
+                    >
+                        Valider
+                    </Button>{" "}
+                    {/*Submit */}
+                    <Button
+                        variant="outline-primary"
+                        size="lg"
+                        //  action={this.handleClearForm}
+                        onClick={this.handleClearForm}
+                        /*  type={"secondary"}
                     title={"Clear"}*/
-                >
-                    Clear
-                </Button>
-                {/* Clear the form */}
+                    >
+                        Effacer
+                    </Button>
+                    {/* Clear the form */}
+                </ButtonToolbar>
             </form>
         );
     }
