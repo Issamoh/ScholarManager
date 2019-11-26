@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import Input from "./Input";
 import Select from "./Select";
 import Button from "react-bootstrap/Button";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
 class FormContainer extends Component {
     constructor(props) {
@@ -11,21 +12,20 @@ class FormContainer extends Component {
 
         this.state = {
             newUser: {
-                matricule:"",
-                nom: "",
-                prenom: "",
-                dateNaissance: "",
-                lieuNaissance:"",
+                name: "",
                 email: "",
-                tel: ""
+                age: "",
+                gender: "",
+                phone: "",
+                bacDegree: ""
             },
 
-            //genderOptions: ["Male", "Female", "Others"]
+            genderOptions: ["Mâle", "Femelle"]
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleClearForm = this.handleClearForm.bind(this);
         this.handleText = this.handleText.bind(this);
-        //this.handleNumber = this.handleNumber.bind(this);
+        this.handleNumber = this.handleNumber.bind(this);
         this.handleInput = this.handleInput.bind(this);
     }
     handleText(e) {
@@ -34,13 +34,13 @@ class FormContainer extends Component {
             prevState => ({
                 newUser: {
                     ...prevState.newUser,
-                    nom: value
+                    name: value
                 }
             }),
             () => console.log(this.state.newUser)
         );
     }
-    /*handleNumber(e) {
+    handleNumber(e) {
         let value = e.target.value;
         this.setState(
             prevState => ({
@@ -51,7 +51,7 @@ class FormContainer extends Component {
             }),
             () => console.log(this.state.newUser)
         );
-    }*/
+    }
     handleInput(e) {
         let value = e.target.value;
         let name = e.target.name;
@@ -74,8 +74,8 @@ class FormContainer extends Component {
     handleFormSubmit(e) {
         e.preventDefault();
         let userData = this.state.newUser;
-        
-        fetch("api/ajoutEtudiant", {
+
+        fetch("api/etudiants/", {
             method: "POST",
             body: JSON.stringify(userData),
             headers: {
@@ -94,13 +94,12 @@ class FormContainer extends Component {
         e.preventDefault();
         this.setState({
             newUser: {
-                matricule:"",
-                nom: "",
-                prenom: "",
-                dateNaissance: "",
-                lieuNaissance:"",
+                name: "",
                 email: "",
-                tel: ""
+                age: "",
+                gender: "",
+                phone: "",
+                bacDegree: ""
             }
         });
     }
@@ -109,81 +108,85 @@ class FormContainer extends Component {
             <form className="container-fluid" onSubmit={this.handleFormSubmit}>
                 <Input
                     type={"text"}
-                    title={"Matricule"}
-                    name={"matricule"}
-                    value={this.state.newUser.matricule}
+                    title={"Nom & Prenom"}
+                    name={"name"}
+                    value={this.state.newUser.name}
                     placeholder={"Entrer le nom "}
                     handleChange={this.handleInput}
                 />{" "}
+                {/* Name of the user */}
                 <Input
-                    type={"text"}
-                    title={"Nom"}
-                    name={"nom"}
-                    value={this.state.newUser.nom}
-                    placeholder={"Entrer le nom "}
+                    type={"number"}
+                    title={" Age "}
+                    name={"age"}
+                    value={this.state.newUser.age}
+                    placeholder={"Entrer l âge "}
                     handleChange={this.handleInput}
                 />{" "}
+                {/* Input for Age */}
                 <Input
-                    type={"text"}
-                    title={"Prenom"}
-                    name={"prenom"}
-                    value={this.state.newUser.prenom}
-                    placeholder={"Entrer le nom "}
-                    handleChange={this.handleInput}
-                />{" "}
-                <Input
-                    type={"text"}
-                    title={"date naissance"}
-                    name={"dateNaissance"}
-                    value={this.state.newUser.dateNaissance}
-                    placeholder={"Entrer le nom "}
-                    handleChange={this.handleInput}
-                />{" "}
-                <Input
-                    type={"text"}
-                    title={"lieu naissance"}
-                    name={"lieuNaissance"}
-                    value={this.state.newUser.lieuNaissance}
-                    placeholder={"Entrer le nom "}
-                    handleChange={this.handleInput}
-                />{" "}
-                <Input
-                    type={"text"}
-                    title={"Email"}
+                    type={"email"}
+                    title={"E-mail"}
                     name={"email"}
                     value={this.state.newUser.email}
-                    placeholder={"Entrer le nom "}
+                    placeholder={"E-mail "}
                     handleChange={this.handleInput}
                 />{" "}
+                {/* email */}
                 <Input
-                    type={"text"}
-                    title={"Tel"}
-                    name={"tel"}
-                    value={this.state.newUser.tel}
-                    placeholder={"Entrer le nom "}
+                    type={"tel"}
+                    title={"Téléphone"}
+                    name={"phone"}
+                    value={this.state.newUser.phone}
+                    placeholder={"tel "}
                     handleChange={this.handleInput}
                 />{" "}
-                
-                <Button
-                    type="submit"
-                    variant="outline-primary"
-                    onClick={this.handleFormSubmit}
+                {/* phone */}
+                <Input
+                    type={"number"}
+                    title={"Moyenne de Bac"}
+                    name={"bacDegree"}
+                    value={this.state.newUser.bacDegree}
+                    placeholder={"Entrer la moyenne de bac "}
+                    handleChange={this.handleInput}
+                />{" "}
+                {/* bacDegree */}
+                <Select
+                    title={"Sexe"}
+                    name={"gender"}
+                    options={this.state.genderOptions}
+                    value={this.state.newUser.gender}
+                    placeholder={"choisir le sexe"}
+                    handleChange={this.handleInput}
+                />{" "}
+                {/* Gender Selection */}
+                <ButtonToolbar
+                    className="justify-content-between"
+                    aria-label="Toolbar with Button groups"
+                >
+                    <Button
+                        type="submit"
+                        variant="outline-primary"
+                        size="lg"
+                        onClick={this.handleFormSubmit}
 
-                    // style={buttonStyle}
-                >
-                    Valider
-                </Button>{" "}
-                {/*Submit */}
-                <Button
-                    variant="outline-primary"
-                    //  action={this.handleClearForm}
-                    onClick={this.handleClearForm}
-                    /*  type={"secondary"}
+                        // style={buttonStyle}
+                    >
+                        Valider
+                    </Button>{" "}
+                    {/*Submit */}
+                    <Button
+                        variant="outline-primary"
+                        size="lg"
+                        //  action={this.handleClearForm}
+                        onClick={this.handleClearForm}
+                        /*  type={"secondary"}
                     title={"Clear"}*/
-                >
-                    Clear
-                </Button>
-                {/* Clear the form */}
+                    >
+                        Effacer
+                    </Button>
+                    {/* Clear the form */}
+                </ButtonToolbar>
             </form>
         );
     }
