@@ -57196,19 +57196,20 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(FormContainer).call(this, props));
     _this.state = {
       newUser: {
-        name: "",
+        matricule: "",
+        nom: "",
+        prenom: "",
+        dateNaissance: "",
+        lieuNaissance: "",
         email: "",
-        age: "",
-        gender: "",
-        phone: "",
-        bacDegree: ""
-      },
-      genderOptions: ["Male", "Female", "Others"]
+        tel: ""
+      } //genderOptions: ["Male", "Female", "Others"]
+
     };
     _this.handleFormSubmit = _this.handleFormSubmit.bind(_assertThisInitialized(_this));
     _this.handleClearForm = _this.handleClearForm.bind(_assertThisInitialized(_this));
-    _this.handleText = _this.handleText.bind(_assertThisInitialized(_this));
-    _this.handleNumber = _this.handleNumber.bind(_assertThisInitialized(_this));
+    _this.handleText = _this.handleText.bind(_assertThisInitialized(_this)); //this.handleNumber = this.handleNumber.bind(this);
+
     _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -57222,33 +57223,30 @@ function (_Component) {
       this.setState(function (prevState) {
         return {
           newUser: _objectSpread({}, prevState.newUser, {
-            name: value
+            nom: value
           })
         };
       }, function () {
         return console.log(_this2.state.newUser);
       });
     }
-  }, {
-    key: "handleNumber",
-    value: function handleNumber(e) {
-      var _this3 = this;
+    /*handleNumber(e) {
+        let value = e.target.value;
+        this.setState(
+            prevState => ({
+                newUser: {
+                    ...prevState.newUser,
+                    age: value
+                }
+            }),
+            () => console.log(this.state.newUser)
+        );
+    }*/
 
-      var value = e.target.value;
-      this.setState(function (prevState) {
-        return {
-          newUser: _objectSpread({}, prevState.newUser, {
-            age: value
-          })
-        };
-      }, function () {
-        return console.log(_this3.state.newUser);
-      });
-    }
   }, {
     key: "handleInput",
     value: function handleInput(e) {
-      var _this4 = this;
+      var _this3 = this;
 
       var value = e.target.value;
       var name = e.target.name;
@@ -57257,7 +57255,7 @@ function (_Component) {
           newUser: _objectSpread({}, prevState.newUser, _defineProperty({}, name, value))
         };
       }, function () {
-        return console.log(_this4.state.newUser);
+        return console.log(_this3.state.newUser);
       });
     }
     /* This life cycle hook gets executed when the component mounts */
@@ -57288,12 +57286,13 @@ function (_Component) {
       e.preventDefault();
       this.setState({
         newUser: {
-          name: "",
+          matricule: "",
+          nom: "",
+          prenom: "",
+          dateNaissance: "",
+          lieuNaissance: "",
           email: "",
-          age: "",
-          gender: "",
-          phone: "",
-          bacDegree: ""
+          tel: ""
         }
       });
     }
@@ -57305,45 +57304,52 @@ function (_Component) {
         onSubmit: this.handleFormSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
         type: "text",
-        title: "Nom & Prenom",
-        name: "name",
-        value: this.state.newUser.name,
+        title: "Matricule",
+        name: "matricule",
+        value: this.state.newUser.matricule,
         placeholder: "Entrer le nom ",
         handleChange: this.handleInput
       }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        type: "number",
-        title: " Age ",
-        name: "age",
-        value: this.state.newUser.age,
-        placeholder: "Entrer l age ",
+        type: "text",
+        title: "Nom",
+        name: "nom",
+        value: this.state.newUser.nom,
+        placeholder: "Entrer le nom ",
         handleChange: this.handleInput
       }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        type: "email",
-        title: "E-mail",
+        type: "text",
+        title: "Prenom",
+        name: "prenom",
+        value: this.state.newUser.prenom,
+        placeholder: "Entrer le nom ",
+        handleChange: this.handleInput
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        type: "text",
+        title: "date naissance",
+        name: "dateNaissance",
+        value: this.state.newUser.dateNaissance,
+        placeholder: "Entrer le nom ",
+        handleChange: this.handleInput
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        type: "text",
+        title: "lieu naissance",
+        name: "lieuNaissance",
+        value: this.state.newUser.lieuNaissance,
+        placeholder: "Entrer le nom ",
+        handleChange: this.handleInput
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        type: "text",
+        title: "Email",
         name: "email",
         value: this.state.newUser.email,
-        placeholder: "E-mail ",
+        placeholder: "Entrer le nom ",
         handleChange: this.handleInput
       }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        type: "number",
-        title: "Téléphone",
-        name: "phone",
-        value: this.state.newUser.phone,
-        placeholder: "tel ",
-        handleChange: this.handleInput
-      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        type: "number",
-        title: "Moyenne de Bac",
-        name: "bacDegree",
-        value: this.state.newUser.bacDegree,
-        placeholder: "Entrer la moyenne de bac ",
-        handleChange: this.handleInput
-      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        title: "Gender",
-        name: "gender",
-        options: this.state.genderOptions,
-        value: this.state.newUser.gender,
-        placeholder: "Select Gender",
+        type: "text",
+        title: "Tel",
+        name: "tel",
+        value: this.state.newUser.tel,
+        placeholder: "Entrer le nom ",
         handleChange: this.handleInput
       }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_3__["default"], {
         type: "submit",

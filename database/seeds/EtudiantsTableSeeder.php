@@ -12,19 +12,19 @@ class EtudiantsTableSeeder extends Seeder
     public function run()
     {
         //
-        $faker = \Faker\Factory::create();
- 
-        // Create 50 product records
-        for ($i = 0; $i < 50; $i++) {
-            Etudiant::create([
-                'matricule' => $faker->title,
-                'nom' => $faker->name,
-                'prenom' => $faker->name,
-                'dateNaissance' => $faker->name,
-                'lieuNaissance' => $faker->name,
-                'email' => $faker->name,
-                'tel' => $faker->name
-            ]);
-        }
+        Etudiant::truncate();
+        $faker = Faker\Factory::create('fr_FR');
+        for($i=0;$i<50;$i++){
+         	$etudiant = new Etudiant;
+         	$etudiant->matricule = $faker->unique()->phoneNumber;
+         	$etudiant->niveau = $faker->randomDigit;
+            $etudiant->nom = $faker->lastName;
+            $etudiant->prenom = $faker->firstName;
+            $etudiant->dateNaissance = $faker->dateTimeThisCentury->format('Y-m-d');
+            $etudiant->lieuNaissance = $faker->name;
+            $etudiant->email = $faker->unique()->email;
+            $etudiant->tel = $faker->phoneNumber;
+            $etudiant->save();
+    	}
     }
 }

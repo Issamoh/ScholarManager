@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdministrateursTable extends Migration
+class CreateEtudiantsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,21 @@ class CreateAdministrateursTable extends Migration
      */
     public function up()
     {
-        Schema::create('administrateurs', function (Blueprint $table) {
+        
+            Schema::create('etudiants', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
+            $table->string('matricule')->unique();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('dateNaissance');
+            $table->date('dateNaissance');
             $table->string('lieuNaissance');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->string('tel');
-            $table->string('poste');
+            $table->integer('groupe');
+            $table->integer('niveau');
         });
+        
     }
 
     /**
@@ -33,6 +37,6 @@ class CreateAdministrateursTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('administrateurs');
+        Schema::dropIfExists('etudiants');
     }
 }

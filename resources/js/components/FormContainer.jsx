@@ -11,20 +11,21 @@ class FormContainer extends Component {
 
         this.state = {
             newUser: {
-                name: "",
+                matricule:"",
+                nom: "",
+                prenom: "",
+                dateNaissance: "",
+                lieuNaissance:"",
                 email: "",
-                age: "",
-                gender: "",
-                phone: "",
-                bacDegree: ""
+                tel: ""
             },
 
-            genderOptions: ["Male", "Female", "Others"]
+            //genderOptions: ["Male", "Female", "Others"]
         };
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.handleClearForm = this.handleClearForm.bind(this);
         this.handleText = this.handleText.bind(this);
-        this.handleNumber = this.handleNumber.bind(this);
+        //this.handleNumber = this.handleNumber.bind(this);
         this.handleInput = this.handleInput.bind(this);
     }
     handleText(e) {
@@ -33,13 +34,13 @@ class FormContainer extends Component {
             prevState => ({
                 newUser: {
                     ...prevState.newUser,
-                    name: value
+                    nom: value
                 }
             }),
             () => console.log(this.state.newUser)
         );
     }
-    handleNumber(e) {
+    /*handleNumber(e) {
         let value = e.target.value;
         this.setState(
             prevState => ({
@@ -50,7 +51,7 @@ class FormContainer extends Component {
             }),
             () => console.log(this.state.newUser)
         );
-    }
+    }*/
     handleInput(e) {
         let value = e.target.value;
         let name = e.target.name;
@@ -93,12 +94,13 @@ class FormContainer extends Component {
         e.preventDefault();
         this.setState({
             newUser: {
-                name: "",
+                matricule:"",
+                nom: "",
+                prenom: "",
+                dateNaissance: "",
+                lieuNaissance:"",
                 email: "",
-                age: "",
-                gender: "",
-                phone: "",
-                bacDegree: ""
+                tel: ""
             }
         });
     }
@@ -107,58 +109,61 @@ class FormContainer extends Component {
             <form className="container-fluid" onSubmit={this.handleFormSubmit}>
                 <Input
                     type={"text"}
-                    title={"Nom & Prenom"}
-                    name={"name"}
-                    value={this.state.newUser.name}
+                    title={"Matricule"}
+                    name={"matricule"}
+                    value={this.state.newUser.matricule}
                     placeholder={"Entrer le nom "}
                     handleChange={this.handleInput}
                 />{" "}
-                {/* Name of the user */}
                 <Input
-                    type={"number"}
-                    title={" Age "}
-                    name={"age"}
-                    value={this.state.newUser.age}
-                    placeholder={"Entrer l age "}
+                    type={"text"}
+                    title={"Nom"}
+                    name={"nom"}
+                    value={this.state.newUser.nom}
+                    placeholder={"Entrer le nom "}
                     handleChange={this.handleInput}
                 />{" "}
-                {/* Input for Age */}
                 <Input
-                    type={"email"}
-                    title={"E-mail"}
+                    type={"text"}
+                    title={"Prenom"}
+                    name={"prenom"}
+                    value={this.state.newUser.prenom}
+                    placeholder={"Entrer le nom "}
+                    handleChange={this.handleInput}
+                />{" "}
+                <Input
+                    type={"text"}
+                    title={"date naissance"}
+                    name={"dateNaissance"}
+                    value={this.state.newUser.dateNaissance}
+                    placeholder={"Entrer le nom "}
+                    handleChange={this.handleInput}
+                />{" "}
+                <Input
+                    type={"text"}
+                    title={"lieu naissance"}
+                    name={"lieuNaissance"}
+                    value={this.state.newUser.lieuNaissance}
+                    placeholder={"Entrer le nom "}
+                    handleChange={this.handleInput}
+                />{" "}
+                <Input
+                    type={"text"}
+                    title={"Email"}
                     name={"email"}
                     value={this.state.newUser.email}
-                    placeholder={"E-mail "}
+                    placeholder={"Entrer le nom "}
                     handleChange={this.handleInput}
                 />{" "}
-                {/* email */}
                 <Input
-                    type={"number"}
-                    title={"Téléphone"}
-                    name={"phone"}
-                    value={this.state.newUser.phone}
-                    placeholder={"tel "}
+                    type={"text"}
+                    title={"Tel"}
+                    name={"tel"}
+                    value={this.state.newUser.tel}
+                    placeholder={"Entrer le nom "}
                     handleChange={this.handleInput}
                 />{" "}
-                {/* phone */}
-                <Input
-                    type={"number"}
-                    title={"Moyenne de Bac"}
-                    name={"bacDegree"}
-                    value={this.state.newUser.bacDegree}
-                    placeholder={"Entrer la moyenne de bac "}
-                    handleChange={this.handleInput}
-                />{" "}
-                {/* bacDegree */}
-                <Select
-                    title={"Gender"}
-                    name={"gender"}
-                    options={this.state.genderOptions}
-                    value={this.state.newUser.gender}
-                    placeholder={"Select Gender"}
-                    handleChange={this.handleInput}
-                />{" "}
-                {/* Gender Selection */}
+                
                 <Button
                     type="submit"
                     variant="outline-primary"

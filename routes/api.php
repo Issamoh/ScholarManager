@@ -18,5 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::get('etudiants', 'EtudiantsController@index');
 Route::get('etudiants/{etu}', 'EtudiantsController@show');
-
 Route::post('ajoutEtudiant', 'EtudiantsController@store');
+Route::post('affect', 'EtudiantsController@affect_total');
