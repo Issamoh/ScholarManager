@@ -1,27 +1,23 @@
 import React, { Component } from "react";
-import "./nav.scss";
-import logo from "./ESI_Logo.png";
-//
-export default class Nav extends Component {
-    render() {
-        return (
-            <div className="menu columns">
-                <div className="column is-2 logo">
-                    <img src={logo} />
-                </div>
-                <div className="columns column nav is-8">
-                    <div className="nav-item">
-                        <a href="">Home</a>
-                    </div>
-                    <div className="nav-item">
-                        <a href="">Todo</a>
-                    </div>
-                    <div className="nav-item">
-                        <a href="">Github</a>
-                    </div>
-                </div>
-                <div className="column is-2"></div>
-            </div>
-        );
-    }
+import "./Main.css";
+import { Link } from "react-router-dom";
+function Nav() {
+    return (
+        <nav>
+            <h3>Logo</h3>
+            <ul className="nav-links">
+                <Link to="/AjoutEtudiant">
+                    <li>Ajouter un Etudiant</li>
+                </Link>
+                <Link to="/Affect">
+                    <li>Affectation aux groupes</li>
+                </Link>
+                <Link to="/Apropos">
+                    <li>A propos</li>
+                </Link>
+            </ul>
+        </nav>
+    );
 }
+
+export default Nav;
