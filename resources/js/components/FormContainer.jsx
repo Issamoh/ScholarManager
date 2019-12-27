@@ -5,6 +5,7 @@ import Input from "./Input";
 import Select from "./Select";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
+import { Row, Col } from "react-bootstrap";
 
 class FormContainer extends Component {
     constructor(props) {
@@ -12,12 +13,14 @@ class FormContainer extends Component {
 
         this.state = {
             newUser: {
-                name: "",
+                nom: "",
+                prenom: "",
                 email: "",
-                age: "",
+                dateNaissance: "",
                 gender: "",
-                phone: "",
-                bacDegree: ""
+                tel: "",
+                moyenneBac: "",
+                lieuNaissance: ""
             },
 
             genderOptions: ["Mâle", "Femelle"]
@@ -46,7 +49,7 @@ class FormContainer extends Component {
             prevState => ({
                 newUser: {
                     ...prevState.newUser,
-                    age: value
+                    dateNaissance: value
                 }
             }),
             () => console.log(this.state.newUser)
@@ -94,36 +97,68 @@ class FormContainer extends Component {
         e.preventDefault();
         this.setState({
             newUser: {
-                name: "",
+                nom: "",
+                prenom: "",
                 email: "",
-                age: "",
+                dateNaissance: "",
                 gender: "",
-                phone: "",
-                bacDegree: ""
+                tel: "",
+                moyenneBac: "",
+                lieuNaissance: ""
             }
         });
     }
     render() {
         return (
             <form className="container-fluid" onSubmit={this.handleFormSubmit}>
-                <Input
-                    type={"text"}
-                    title={"Nom & Prenom"}
-                    name={"name"}
-                    value={this.state.newUser.name}
-                    placeholder={"Entrer le nom "}
-                    handleChange={this.handleInput}
-                />{" "}
-                {/* Name of the user */}
-                <Input
-                    type={"number"}
-                    title={" Age "}
-                    name={"age"}
-                    value={this.state.newUser.age}
-                    placeholder={"Entrer l âge "}
-                    handleChange={this.handleInput}
-                />{" "}
-                {/* Input for Age */}
+                <Row>
+                    <Col>
+                        <Input
+                            type={"text"}
+                            title={"Nom "}
+                            name={"nom"}
+                            value={this.state.newUser.nom}
+                            placeholder={"Entrer le nom "}
+                            handleChange={this.handleInput}
+                        />{" "}
+                        {/* Name of the user */}
+                    </Col>
+                    <Col>
+                        <Input
+                            type={"text"}
+                            title={"Prenom "}
+                            name={"prenom"}
+                            value={this.state.newUser.prenom}
+                            placeholder={"Entrer le prenom "}
+                            handleChange={this.handleInput}
+                        />{" "}
+                        {/* Name of the user */}
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <Input
+                            type={"date"}
+                            title={" dateNaissance "}
+                            name={"dateNaissance"}
+                            value={this.state.newUser.dateNaissance}
+                            placeholder={"Entrer la date de naissance "}
+                            handleChange={this.handleInput}
+                        />{" "}
+                        {/* Input for birth date */}
+                    </Col>
+                    <Col>
+                        <Input
+                            type={"text"}
+                            title={" lieuNaissance "}
+                            name={"lieuNaissance"}
+                            value={this.state.newUser.lieuNaissance}
+                            placeholder={"Entrer le lieu de naissance "}
+                            handleChange={this.handleInput}
+                        />{" "}
+                        {/* Input for birth place */}
+                    </Col>
+                </Row>
                 <Input
                     type={"email"}
                     title={"E-mail"}
@@ -136,21 +171,21 @@ class FormContainer extends Component {
                 <Input
                     type={"tel"}
                     title={"Téléphone"}
-                    name={"phone"}
-                    value={this.state.newUser.phone}
+                    name={"tel"}
+                    value={this.state.newUser.tel}
                     placeholder={"tel "}
                     handleChange={this.handleInput}
                 />{" "}
-                {/* phone */}
+                {/* tel */}
                 <Input
                     type={"number"}
                     title={"Moyenne de Bac"}
-                    name={"bacDegree"}
-                    value={this.state.newUser.bacDegree}
+                    name={"moyenneBac"}
+                    value={this.state.newUser.moyenneBac}
                     placeholder={"Entrer la moyenne de bac "}
                     handleChange={this.handleInput}
                 />{" "}
-                {/* bacDegree */}
+                {/* moyenneBac */}
                 <Select
                     title={"Sexe"}
                     name={"gender"}
@@ -191,7 +226,5 @@ class FormContainer extends Component {
         );
     }
 }
-const buttonStyle = {
-    margin: "10px 10px 10px 10px"
-};
+
 export default FormContainer;
