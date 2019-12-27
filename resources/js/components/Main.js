@@ -7,6 +7,7 @@ import Apropos from "./Apropos";
 import "./Main.css";
 import AjoutEtudiant from "./AjouEtudiant";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import NavigBar from "./NavigBar";
 
 /* An example React component */
 class Main extends Component {
@@ -14,7 +15,7 @@ class Main extends Component {
         return (
             <Router>
                 <div className="Main">
-                    <Nav />
+                    <NavigBar />
                     <Switch>
                         <Route path="/" exact component={Home} />
                         <Route

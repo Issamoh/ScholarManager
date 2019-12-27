@@ -78,7 +78,7 @@ class FormContainer extends Component {
         e.preventDefault();
         let userData = this.state.newUser;
 
-        fetch("api/etudiants/", {
+        fetch("api/ajoutEtudiant", {
             method: "POST",
             body: JSON.stringify(userData),
             headers: {
@@ -139,7 +139,7 @@ class FormContainer extends Component {
                     <Col>
                         <Input
                             type={"date"}
-                            title={" dateNaissance "}
+                            title={" Date de naissance "}
                             name={"dateNaissance"}
                             value={this.state.newUser.dateNaissance}
                             placeholder={"Entrer la date de naissance "}
@@ -150,7 +150,7 @@ class FormContainer extends Component {
                     <Col>
                         <Input
                             type={"text"}
-                            title={" lieuNaissance "}
+                            title={" Lieu de naissance "}
                             name={"lieuNaissance"}
                             value={this.state.newUser.lieuNaissance}
                             placeholder={"Entrer le lieu de naissance "}
