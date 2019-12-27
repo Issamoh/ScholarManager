@@ -1,59 +1,52 @@
 import React, { useState } from "react";
-import {
-    Nav,
-    NavItem,
-    Dropdown,
-    DropdownItem,
-    DropdownToggle,
-    DropdownMenu,
-    NavLink,
-    Navbar
-} from "reactstrap";
+import logo from "./logo.svg";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 const NavigBar = props => {
-    const [dropdownOpen, setDropdownOpen] = useState(false);
-
-    const toggle = () => setDropdownOpen(!dropdownOpen);
-
     return (
         <div>
-            <Navbar bg="dark" variant="dark">
-                <Nav className="mr-auto">
-                    <Link to="/">
-                        <NavItem>
-                            <NavLink active>Gestion de scolarité</NavLink>
-                        </NavItem>
-                    </Link>
-                    <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
-                        <DropdownToggle nav caret>
-                            Gestion des étudiants
-                        </DropdownToggle>
-                        <DropdownMenu>
-                            <Link to="/AjoutEtudiant">
-                                <DropdownItem>Ajouter un étudiant</DropdownItem>
-                            </Link>
-                            <Link to="/Affect">
-                                <DropdownItem>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+                <LinkContainer to="/">
+                    <Navbar.Brand href="#home">
+                        <img
+                            alt=""
+                            src={logo}
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-top"
+                        />{" "}
+                        Gestion de scolarité
+                    </Navbar.Brand>
+                </LinkContainer>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="mr-auto">
+                        <NavDropdown
+                            title="Gestion des étudiants"
+                            id="collasible-nav-dropdown"
+                        >
+                            <LinkContainer to="/AjoutEtudiant">
+                                <NavDropdown.Item>
+                                    Ajouter un étudiant
+                                </NavDropdown.Item>
+                            </LinkContainer>
+                            <LinkContainer to="/Affect">
+                                <NavDropdown.Item>
                                     Affectation aux groupes
-                                </DropdownItem>
-                            </Link>
-                        </DropdownMenu>
-                    </Dropdown>
-                    <NavItem>
-                        <NavLink disabled href="#">
-                            Gestions des enseignants
-                        </NavLink>
-                    </NavItem>
-
-                    <Link to="/Aprops">
-                        <NavItem>
-                            <NavLink>A propos de nous</NavLink>
-                        </NavItem>
-                    </Link>
-                </Nav>
+                                </NavDropdown.Item>
+                            </LinkContainer>
+                        </NavDropdown>
+                        <Nav.Link disabled>Gestion des enseignants </Nav.Link>
+                    </Nav>
+                    <Nav>
+                        <LinkContainer to="/Apropos">
+                            <Nav.Link>A propos de nous</Nav.Link>
+                        </LinkContainer>
+                    </Nav>
+                </Navbar.Collapse>
             </Navbar>
         </div>
     );
 };
-
 export default NavigBar;
