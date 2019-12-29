@@ -4,11 +4,16 @@ import FormContainer from "./FormContainer";
 class AjoutEtudiant extends Component {
     render() {
         return (
-            <div>
+            <div style={{ padding: 68 }}>
                 <div className="container">
                     <div className="columns">
                         <div className="col-md-9 centered">
-                            <h3>Ajouter un étudiant</h3>
+                            <h3
+                                className="mt-2 mb-1 text-center"
+                                style={{ color: "#0099cc" }}
+                            >
+                                Ajouter un étudiant
+                            </h3>
                             <FormContainer />
                         </div>
                     </div>

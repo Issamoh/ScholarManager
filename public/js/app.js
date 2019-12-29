@@ -70541,13 +70541,22 @@ function (_Component) {
   _createClass(AjoutEtudiant, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        style: {
+          padding: 68
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "columns"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-9 centered"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Ajouter un \xE9tudiant"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FormContainer__WEBPACK_IMPORTED_MODULE_1__["default"], null)))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "mt-2 mb-1 text-center",
+        style: {
+          color: "#0099cc"
+        }
+      }, "Ajouter un \xE9tudiant"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FormContainer__WEBPACK_IMPORTED_MODULE_1__["default"], null)))));
     }
   }]);
 
@@ -70591,6 +70600,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Footer; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+/* harmony import */ var _github_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./github.svg */ "./resources/js/components/github.svg");
+/* harmony import */ var _github_svg__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_github_svg__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -70611,6 +70623,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
 var Footer =
 /*#__PURE__*/
 function (_Component) {
@@ -70625,13 +70639,22 @@ function (_Component) {
   _createClass(Footer, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "footer main  column is-8"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "text-center"
-      }, "powered by", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+        className: "footer mt-auto py-1 bg-light text-dark fixed-bottom"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container mx-auto",
+        style: {
+          width: 350
+        }
+      }, "\xA9 copyrights to", " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         href: "https://github.com/Issamoh/ScholarManager.git"
-      }, "@ScholarManager app!")));
+      }, "@ScholarManager app !", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        alt: "",
+        src: _github_svg__WEBPACK_IMPORTED_MODULE_2___default.a,
+        width: "20",
+        height: "20",
+        className: "d-inline-block align-top"
+      }))));
     }
   }]);
 
@@ -71198,6 +71221,17 @@ var Select = function Select(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Select);
+
+/***/ }),
+
+/***/ "./resources/js/components/github.svg":
+/*!********************************************!*\
+  !*** ./resources/js/components/github.svg ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/github.svg?ddc250127189a3b4ee4802e6c2493757";
 
 /***/ }),
 
