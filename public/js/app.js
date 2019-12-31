@@ -70484,10 +70484,27 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _FormAffect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormAffect */ "./resources/js/components/FormAffect.jsx");
+
 
 
 function Affect() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Affectation al\xE9atoire des \xE9tudiants aux groupes"));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: {
+      padding: 68
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row d-flex justify-content-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-md-6 "
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "mt-2 mb-1 text-center",
+    style: {
+      color: "#0099cc"
+    }
+  }, "Affectation al\xE9atoire des \xE9tudiants aux groupes"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_FormAffect__WEBPACK_IMPORTED_MODULE_1__["default"], null))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Affect);
@@ -70548,7 +70565,7 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "columns"
+        className: "row d-flex justify-content-center"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-9 centered"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
@@ -70662,6 +70679,178 @@ function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/FormAffect.jsx":
+/*!************************************************!*\
+  !*** ./resources/js/components/FormAffect.jsx ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Select__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Select */ "./resources/js/components/Select.jsx");
+/* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var react_bootstrap_ButtonToolbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/ButtonToolbar */ "./node_modules/react-bootstrap/esm/ButtonToolbar.js");
+/* harmony import */ var _Input__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Input */ "./resources/js/components/Input.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+
+
+
+var FormAffect =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(FormAffect, _Component);
+
+  function FormAffect(props) {
+    var _this;
+
+    _classCallCheck(this, FormAffect);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(FormAffect).call(this, props));
+    _this.state = {
+      affectation: {
+        niveauEtude: "",
+        nbrMaxPGroupe: ""
+      },
+      niveauOptions: ["1CP", "2CP", "1CS", "2CSSIQ", "2CSSIL", "2CSSIT", "3CSSIQ", "3CSSIL", "3CSSIT"]
+    };
+    _this.handleFormSubmit = _this.handleFormSubmit.bind(_assertThisInitialized(_this));
+    _this.handleClearForm = _this.handleClearForm.bind(_assertThisInitialized(_this));
+    _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(FormAffect, [{
+    key: "handleInput",
+    value: function handleInput(e) {
+      var _this2 = this;
+
+      var value = e.target.value;
+      var name = e.target.name;
+      this.setState(function (prevState) {
+        return {
+          affectation: _objectSpread({}, prevState.affectation, _defineProperty({}, name, value))
+        };
+      }, function () {
+        return console.log(_this2.state.affectation);
+      });
+    }
+    /* This life cycle hook gets executed when the component mounts */
+    // Form submission logic
+
+  }, {
+    key: "handleFormSubmit",
+    value: function handleFormSubmit(e) {
+      e.preventDefault();
+      var affectData = this.state.affectation;
+      fetch("api/affect", {
+        method: "POST",
+        body: JSON.stringify(affectData),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        }
+      }).then(function (response) {
+        return response.json();
+      }).then(function (data) {
+        return console.log("Successful" + data);
+      }, alert("Affectation terminée avec succes"), e.preventDefault(), this.setState({
+        affectation: {
+          niveauEtude: "",
+          nbrMaxPGroupe: ""
+        }
+      }))["catch"](function (err) {
+        return console.log("échec");
+      }, alert("Affectation non terminée"));
+    }
+  }, {
+    key: "handleClearForm",
+    value: function handleClearForm(e) {
+      // Logic for resetting the form
+      e.preventDefault();
+      this.setState({
+        affectation: {
+          niveauEtude: "",
+          nbrMaxPGroupe: ""
+        }
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "container-fluid",
+        onSubmit: this.handleFormSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Select__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        title: "Niveau d'étude",
+        name: "niveauEtude",
+        options: this.state.niveauOptions,
+        value: this.state.affectation.niveauOptions,
+        placeholder: "choisir le niveau d'étude",
+        handleChange: this.handleInput
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        type: "number",
+        title: "nombre maximale d'étudiants par groupe",
+        name: "nbrMaxPGroupe",
+        value: this.state.affectation.nbrMaxPGroupe,
+        placeholder: "Entrer le nombre maximale d'étudiants par groupe ",
+        handleChange: this.handleInput
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_ButtonToolbar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        className: "justify-content-between",
+        "aria-label": "Toolbar with Button groups"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        type: "submit",
+        variant: "outline-primary",
+        size: "lg",
+        onClick: this.handleFormSubmit // style={buttonStyle}
+
+      }, "Valider"), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        variant: "outline-primary",
+        size: "lg" //  action={this.handleClearForm}
+        ,
+        onClick: this.handleClearForm
+        /*  type={"secondary"}
+        title={"Clear"}*/
+
+      }, "Effacer")));
+    }
+  }]);
+
+  return FormAffect;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (FormAffect);
 
 /***/ }),
 
@@ -70809,10 +70998,23 @@ function (_Component) {
           "Content-Type": "application/json"
         }
       }).then(function (response) {
-        response.json().then(function (data) {
-          console.log("Successful" + data);
-        });
-      });
+        return response.json();
+      }).then(function (data) {
+        return console.log("Successful" + data);
+      }, alert("l'Etudiant est ajouté avec succes"), e.preventDefault(), this.setState({
+        newUser: {
+          nom: "",
+          prenom: "",
+          email: "",
+          dateNaissance: "",
+          gender: "",
+          tel: "",
+          moyenneBac: "",
+          lieuNaissance: ""
+        }
+      }))["catch"](function (err) {
+        return console.log("échec");
+      }, alert("l'Etudiant n'est pas ajouté"));
     }
   }, {
     key: "handleClearForm",
@@ -71089,7 +71291,19 @@ function Home() {
     className: "col-sm-6 fadeInLeft animated"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Qu'est ce que ScholarManager ?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "subheading"
-  }, " ", "une application web de scolarit\xE9", " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", "ScholarManager est une application de scolarit\xE9 ciblant les \xE9tudiants, les enseignants et l\u2019administration."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", "Elle leurs facilite les diff\xE9rentes op\xE9rations scolaires telles que les inscriptions, les permutations entre-groupes, les affectations , les \xE9valuations ... etc"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, " ", "une application web de scolarit\xE9", " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    style: {
+      fontSize: 21,
+      fontWeight: 400,
+      letterSpacing: 0
+    }
+  }, " ", "ScholarManager est une application de scolarit\xE9 ciblant les \xE9tudiants, les enseignants et l\u2019administration."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    style: {
+      fontSize: 21,
+      fontWeight: 400,
+      letterSpacing: 0
+    }
+  }, " ", "Elle leurs facilite les diff\xE9rentes op\xE9rations scolaires telles que les inscriptions, les permutations entre-groupes, les affectations , les \xE9valuations ... etc"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-sm-6 animated"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["Image"], {
     src: _logo_svg__WEBPACK_IMPORTED_MODULE_9___default.a,

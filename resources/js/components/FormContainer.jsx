@@ -85,11 +85,29 @@ class FormContainer extends Component {
                 Accept: "application/json",
                 "Content-Type": "application/json"
             }
-        }).then(response => {
-            response.json().then(data => {
-                console.log("Successful" + data);
-            });
-        });
+        })
+            .then(response => response.json())
+            .then(
+                data => console.log("Successful" + data),
+                alert("l'Etudiant est ajouté avec succes"),
+                e.preventDefault(),
+                this.setState({
+                    newUser: {
+                        nom: "",
+                        prenom: "",
+                        email: "",
+                        dateNaissance: "",
+                        gender: "",
+                        tel: "",
+                        moyenneBac: "",
+                        lieuNaissance: ""
+                    }
+                })
+            )
+            .catch(
+                err => console.log("échec"),
+                alert("l'Etudiant n'est pas ajouté")
+            );
     }
     handleClearForm(e) {
         // Logic for resetting the form

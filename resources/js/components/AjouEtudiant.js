@@ -6,7 +6,7 @@ class AjoutEtudiant extends Component {
         return (
             <div style={{ padding: 68 }}>
                 <div className="container">
-                    <div className="columns">
+                    <div className="row d-flex justify-content-center">
                         <div className="col-md-9 centered">
                             <h3
                                 className="mt-2 mb-1 text-center"

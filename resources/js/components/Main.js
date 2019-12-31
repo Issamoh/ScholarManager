@@ -46,13 +46,25 @@ function Home() {
                         <hr />
                     </div>
                     <div>
-                        <p>
+                        <p
+                            style={{
+                                fontSize: 21,
+                                fontWeight: 400,
+                                letterSpacing: 0
+                            }}
+                        >
                             {" "}
                             ScholarManager est une application de scolarité
                             ciblant les étudiants, les enseignants et
                             l’administration.
                         </p>
-                        <p>
+                        <p
+                            style={{
+                                fontSize: 21,
+                                fontWeight: 400,
+                                letterSpacing: 0
+                            }}
+                        >
                             {" "}
                             Elle leurs facilite les différentes opérations
                             scolaires telles que les inscriptions, les
