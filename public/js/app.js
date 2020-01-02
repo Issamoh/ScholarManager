@@ -71463,8 +71463,8 @@ module.exports = "/images/logo.svg?006775fe932cf295eea5ad1b65555e1f";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\ScholarManager\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\ScholarManager\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Rezak AZIZ\Desktop\ScholarManager\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Rezak AZIZ\Desktop\ScholarManager\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
