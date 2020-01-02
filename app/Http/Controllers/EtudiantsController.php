@@ -22,13 +22,16 @@ class EtudiantsController extends Controller
 	public function store(Request $request)
 	{
 		$etudiant= new Etudiant;
-		if($request->matricule->isEmpty()) return false;
-		$etudiant->matricule=$request->input('matricule');
+		//if($request->matricule->isEmpty()) return false;
+		$etudiant->niveau=1;
+		$etudiant->matricule=Etudiant::latest()->first()->matricule + 1;
 		$etudiant->nom=$request->input('nom');
 		$etudiant->prenom=$request->input('prenom');
 		$etudiant->dateNaissance=$request->input('dateNaissance');
 		$etudiant->lieuNaissance=$request->input('lieuNaissance');
 		$etudiant->email=$request->input('email');
+		$etudiant->moyenneBac=$request->input('moyenneBac');
+		$etudiant->gender=$request->input('gender');
 		$etudiant->tel=$request->input('tel');
 		$etudiant->save();
 		return response()->json($etudiant, 201);	
@@ -42,9 +45,9 @@ class EtudiantsController extends Controller
 	public function affect_total(Request $request)
 	{
 		//A ameliorer pour les niveau 
-		$nbetudgr=$request->input('nbEtudiantParGroupe');
+		$nbetudgr=$request->input('nbrMaxPGroupe');
 
-		$etuds=Etudiant::all()->where('niveau',$request->input('niveau'));
+	$etuds=Etudiant::all()->where('niveau',1/*$request->input('niveauEtude')*/);
 		$nbetud=$etuds->Count();
 		$i=$nbetud;//nombre des etudiants
 		if($i>0)
@@ -74,7 +77,7 @@ class EtudiantsController extends Controller
 				
 			}
 		
-		return Etudiant::all()->where('niveau',$request->input('niveau'));
+		return Etudiant::all()->where('niveau',1/*$request->input('niveauEtude')*/);
 	}
 
  /*
