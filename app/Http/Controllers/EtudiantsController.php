@@ -30,6 +30,8 @@ class EtudiantsController extends Controller
 		$etudiant->dateNaissance=$request->input('dateNaissance');
 		$etudiant->lieuNaissance=$request->input('lieuNaissance');
 		$etudiant->email=$request->input('email');
+		$etudiant->moyenneBac=$request->input('moyenneBac');
+		$etudiant->gender=$request->input('gender');
 		$etudiant->tel=$request->input('tel');
 		$etudiant->save();
 		return response()->json($etudiant, 201);	
