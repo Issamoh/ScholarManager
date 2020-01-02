@@ -70997,24 +70997,34 @@ function (_Component) {
           Accept: "application/json",
           "Content-Type": "application/json"
         }
-      }).then(function (response) {
-        return response.json();
-      }).then(function (data) {
-        return console.log("Successful" + data);
-      }, alert("l'Etudiant est ajouté avec succes"), e.preventDefault(), this.setState({
-        newUser: {
-          nom: "",
-          prenom: "",
-          email: "",
-          dateNaissance: "",
-          gender: "",
-          tel: "",
-          moyenneBac: "",
-          lieuNaissance: ""
-        }
-      }))["catch"](function (err) {
-        return console.log("échec");
-      }, alert("l'Etudiant n'est pas ajouté"));
+      })
+      /*.then(response => response.json())
+      .then(
+          data => console.log("Successful" + data),
+          alert("l'Etudiant est ajouté avec succes"),
+          e.preventDefault(),
+          this.setState({
+              newUser: {
+                  nom: "",
+                  prenom: "",
+                  email: "",
+                  dateNaissance: "",
+                  gender: "",
+                  tel: "",
+                  moyenneBac: "",
+                  lieuNaissance: ""
+              }
+          })
+      )
+      .catch(
+          err => console.log("échec"),
+          alert("l'Etudiant n'est pas ajouté")
+      );*/
+      .then(function (res) {
+        console.log(res);
+      })["catch"](function (res) {
+        console.log(res);
+      });
     }
   }, {
     key: "handleClearForm",

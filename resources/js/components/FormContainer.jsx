@@ -86,7 +86,7 @@ class FormContainer extends Component {
                 "Content-Type": "application/json"
             }
         })
-            .then(response => response.json())
+            /*.then(response => response.json())
             .then(
                 data => console.log("Successful" + data),
                 alert("l'Etudiant est ajouté avec succes"),
@@ -107,7 +107,13 @@ class FormContainer extends Component {
             .catch(
                 err => console.log("échec"),
                 alert("l'Etudiant n'est pas ajouté")
-            );
+            );*/
+            .then(function(res) {
+                console.log(res);
+            })
+            .catch(function(res) {
+                console.log(res);
+            });
     }
     handleClearForm(e) {
         // Logic for resetting the form
