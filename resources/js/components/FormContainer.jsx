@@ -110,15 +110,15 @@ class FormContainer extends Component {
             );*/
             .then(function(res) {
                 console.log(res);
+                if (res.ok) {
+                    alert("l'étudiant est ajouté avec succes");
+                } else {
+                    alert("l'étudiant n'est pas ajouté");
+                }
             })
             .catch(function(res) {
                 console.log(res);
             });
-        if (res.ok) {
-            alert("l'étudiant est ajouté avec succes");
-        } else {
-            alert("l'étudiant n'est pas ajouté");
-        }
     }
     handleClearForm(e) {
         // Logic for resetting the form
