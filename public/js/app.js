@@ -70595,10 +70595,55 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _team_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./team.jpg */ "./resources/js/components/team.jpg");
+/* harmony import */ var _team_jpg__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_team_jpg__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/index.js");
+
+
 
 
 function Apropos() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "A propos de nous"));
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container pt-5 mx-auto ",
+    style: {
+      paddingBottom: 68
+    }
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-sm-6 fadeInLeft animated"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Qui sommes nous ?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "subheading"
+  }, " ", "Trois \xE9tudiants de l'\xE9cole nationale sup\xE9rieure d'informatique.", " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    style: {
+      fontSize: 21,
+      fontWeight: 400,
+      letterSpacing: 0
+    }
+  }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/Issamoh"
+  }, "Ben messaoud Mohamed Issam Daoud")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    style: {
+      fontSize: 21,
+      fontWeight: 400,
+      letterSpacing: 0
+    }
+  }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/rezakaziz"
+  }, "Aziz Rezak", " ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    style: {
+      fontSize: 21,
+      fontWeight: 400,
+      letterSpacing: 0
+    }
+  }, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/Saidaniriadh"
+  }, "Saidani Riadh", " ")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "col-sm-6 animated roundedCircle"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Image"], {
+    src: _team_jpg__WEBPACK_IMPORTED_MODULE_1___default.a,
+    fluid: true
+  }))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Apropos);
@@ -71455,6 +71500,17 @@ module.exports = "/images/logo.svg?006775fe932cf295eea5ad1b65555e1f";
 
 /***/ }),
 
+/***/ "./resources/js/components/team.jpg":
+/*!******************************************!*\
+  !*** ./resources/js/components/team.jpg ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/team.jpg?fa5c56409cc5770094ffd65145632a79";
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -71473,8 +71529,8 @@ module.exports = "/images/logo.svg?006775fe932cf295eea5ad1b65555e1f";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Rezak AZIZ\Desktop\ScholarManager\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Rezak AZIZ\Desktop\ScholarManager\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\ScholarManager\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\ScholarManager\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
